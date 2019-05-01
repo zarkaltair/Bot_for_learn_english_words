@@ -5,9 +5,10 @@ import re
 import numpy as np
 
 from aiogram import Bot, types
-from aiogram.utils import executor
+# from aiogram.utils import executor
 from aiogram.dispatcher import Dispatcher
 from aiogram.types.message import ContentType
+from aiogram.utils.executor import start_webhook
 from aiogram.utils.markdown import text, bold, italic, code, pre
 from aiogram.types import ParseMode, InputMediaPhoto, InputMediaVideo, ChatActions
 
