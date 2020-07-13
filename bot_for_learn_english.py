@@ -31,10 +31,9 @@ WEBAPP_PORT = os.environ.get('PORT')
 # Create log string
 logging.basicConfig(level=logging.INFO)
 
-# Create dispatcher with loop and bot 
-loop = asyncio.get_event_loop()
+# Create dispatcher and bot
 bot = Bot(token=TOKEN, parse_mode='HTML')
-dp = Dispatcher(bot, loop=loop)
+dp = Dispatcher(bot)
 
 
 # Create function which process connand /start
