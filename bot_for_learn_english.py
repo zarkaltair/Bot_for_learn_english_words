@@ -31,7 +31,8 @@ WEBAPP_PORT = os.environ.get('PORT')
 # Create log string
 logging.basicConfig(level=logging.INFO)
 
-# Create dispatcher and bot
+# Create dispatcher and bot 
+# loop = asyncio.get_event_loop()
 bot = Bot(token=TOKEN, parse_mode='HTML')
 dp = Dispatcher(bot)
 
@@ -79,8 +80,7 @@ async def unknown_message(msg: types.Message):
 
 # Create the function to startup my bot
 async def on_startup(dp):
-    msg = "<code>I'm started, matherfucker!!!</code>"
-    await bot.send_message(chat_id=252027450, text=msg)
+    await bot.set_webhook(WEBHOOK_URL)
 
 
 # Create the function to shutdown my bot
