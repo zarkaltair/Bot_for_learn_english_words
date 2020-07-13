@@ -6,7 +6,6 @@ import logging
 from random import randint
 
 from aiogram import Bot, types
-from aiogram.utils import executor
 from aiogram.types import ParseMode
 from aiogram.utils.markdown import text
 from aiogram.dispatcher import Dispatcher
@@ -90,6 +89,7 @@ async def on_shutdown(dp):
 
 # Main script
 if __name__ == '__main__':
+    init_tables()
     start_webhook(dispatcher=dp, webhook_path=WEBHOOK_PATH,
                   on_startup=on_startup, on_shutdown=on_shutdown,
                   host=WEBAPP_HOST, port=WEBAPP_PORT)
