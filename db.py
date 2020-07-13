@@ -55,19 +55,3 @@ def list_all_words(conn, user_id: int, limit: int=10):
     c = conn.cursor()
     c.execute('SELECT * FROM user_words WHERE user_id = ? ORDER BY id LIMIT ?', (user_id, limit))
     return c.fetchall()
-
-
-if __name__ == '__main__':
-    init_tables()
-
-    add_word(user_id=1, word='learn', translate='учить')
-    add_word(user_id=1, word='learn', translate='учить')
-    add_word(user_id=1, word='insted of', translate='вместо')
-    add_word(user_id=1, word='otherwise', translate='иначе')
-
-    r = count_words(user_id=252027450)
-    print(f'{r} words in database')
-
-    r = list_all_words(user_id=252027450)
-    for i in r:
-        print(i)
